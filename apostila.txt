@@ -1,0 +1,1025 @@
+APOSTILA OFICIAL
+Gerenciamento de Contas a Pagar e Receber em PHP
+Com Login Diferenciado e Bootstrap
+Curso: Programação Web
+Projeto Didático Completo
+
+Apresentação
+Esta apostila tem como objetivo ensinar programação web com PHP de forma prática,
+utilizando arrays para simular banco de dados, Bootstrap para interface gráfica e login com
+perfis de usuário. Ao final, o aluno desenvolve um sistema financeiro completo com CRUD.
+
+Objetivos de Aprendizagem
+* Compreender arrays em PHP
+* Simular banco de dados
+* Criar login com sessão
+* Trabalhar com perfis de usuários
+* Utilizar Bootstrap
+* Implementar CRUD completo
+Aqui estão os objetivos de aprendizado do curso:
+● Manipulação de Arrays em PHP: Adquirir a capacidade de trabalhar com
+estruturas de arrays no PHP.
+● Simulação de Banco de Dados: Desenvolver a habilidade de simular operações de
+banco de dados.
+● Implementação de Login com Sessões: Criar sistemas de autenticação de
+usuários utilizando sessões.
+● Gestão de Perfis de Usuários: Implementar a funcionalidade de trabalhar com
+diferentes níveis de acesso ou perfis de usuários.
+● Utilização do Framework Bootstrap: Aplicar o framework CSS Bootstrap para
+estilização e design responsivo.
+● Desenvolvimento de CRUD Completo: Criar um sistema completo de Cadastro,
+Leitura, Atualização e Exclusão (CRUD).
+
+Aula 1 – Listas e Vetores em PHP
+Em PHP, listas e vetores são chamados de arrays. Eles permitem armazenar vários valores
+em uma única variável.
+Arrays podem ser indexados, associativos ou multidimensionais, sendo fundamentais para
+simular tabelas de banco de dados.
+
+Aula 2 – Simulando Banco de Dados
+com Arrays
+Usando arrays multidimensionais, é possível representar registros de uma tabela, facilitando
+o aprendizado da lógica de sistemas.
+
+Aula 3 – Bootstrap
+Bootstrap é um framework front-end que facilita a criação de interfaces modernas e
+responsivas. Ele cuida do visual do sistema.
+
+Aula 4 – Estrutura de Pastas do Projeto
+Uma boa estrutura de pastas organiza o código e aproxima o aluno da realidade
+profissional.
+
+Aula 5 – Login com Perfis de Usuário
+O sistema possui login com sessão e perfis diferentes: cliente, empresa e proprietário.
+
+Aula 6 – Menu Dinâmico e Dashboard
+O menu e o dashboard se adaptam ao perfil do usuário, utilizando componentes do
+Bootstrap.
+
+Aula 7 – CRUD Completo de Contas
+O CRUD permite cadastrar, listar, editar e excluir contas a pagar e receber, simulando
+sistemas reais.
+
+Conclusão
+Esta apostila fornece uma base sólida para o ensino de programação web, preparando o
+aluno para trabalhar futuramente com bancos de dados reais como MySQL.
+
+AULA 01
+
+Introdução ao PHP, Variáveis, Listas e Vetores
+Base lógica para sistemas web
+⏱ Carga horária: 2 aulas de 50 minutos (100 minutos)
+🎯 OBJETIVOS DE APRENDIZAGEM
+Ao final desta aula, o aluno será capaz de:
+* Entender o que é PHP e para que ele é usado
+* Criar e utilizar variáveis
+* Compreender o conceito de listas e vetores (arrays)
+* Criar arrays indexados, associativos e multidimensionais
+* Entender como arrays são a base de sistemas com banco de dados
+Objetivos da Aula:
+
+Esta aula visa capacitar o aluno a:
+● Definir e aplicar os conceitos de PHP e seus casos de uso.
+● Criar e manipular variáveis.
+● Dominar o uso de listas, vetores e arrays.
+● Construir arrays indexados, associativos e multidimensionais.
+● Compreender como os arrays servem de estrutura fundamental para sistemas
+que utilizam banco de dados.
+📌 1. O QUE É PHP?
+O PHP (Hypertext Preprocessor) é uma linguagem de programação usada para criar
+sistemas web dinâmicos.
+👉 Diferente do HTML, o PHP:
+* Roda no servidor
+* Processa dados
+* Controla login e senha
+* Trabalha com informações (dados)
+
+📌 Exemplos de sistemas feitos com PHP:
+* Sistema financeiro
+* Sistema escolar
+* Cadastro de clientes
+* Sites com login
+No nosso projeto, o PHP será usado para: ✅ Controlar usuários
+✅ Gerenciar contas a pagar e receber
+✅ Criar regras do sistema
+O PHP é uma linguagem de scripting de lado do servidor, utilizada para:
+● Executar no servidor.
+● Processar dados e informações.
+● Controlar mecanismos como login e senha.
+Aplicações comuns desenvolvidas com PHP incluem:
+● Sistemas financeiros.
+● Sistemas escolares.
+● Sistemas de cadastro de clientes.
+● Websites que exigem autenticação (login).
+Em nosso projeto, o PHP será aplicado para:
+● Controle e gerenciamento de usuários.
+● Gerenciamento de contas a pagar e receber.
+● Implementação das regras de negócio do sistema.
+📌 2. VARIÁVEIS EM PHP
+Uma variável é um espaço usado para guardar informações.
+Exemplo básico:
+<?php
+$nome = "Maria";
+$idade = 15;
+?>
+<?php
+
+$nome = "Maria";
+$idade = 15;
+
+?>
+Explicação:
+$nome → nome da variável
+"Maria" → valor armazenado
+* Toda variável em PHP começa com $
+Em PHP:
+● Variáveis são precedidas pelo símbolo de cifrão ($).
+● O $nome representa o nome da variável.
+● O valor armazenado na variável é o dado propriamente dito, como "Maria".
+Em PHP, as variáveis são identificadas pelo símbolo de cifrão ($), seguido pelo nome da
+variável (exemplo: $nome). O valor atribuído à variável, como "Maria", é o dado que ela
+armazena.
+
+Regra fundamental: Toda variável em PHP deve começar com o $.
+✅ O valor da variável pode mudar durante o programa.
+📌 3. O QUE SÃO LISTAS E VETORES?
+Em PHP, listas e vetores são chamados de arrays.
+👉 Um array permite guardar vários valores em uma única variável.
+Sem array (forma incorreta):
+$aluno1 = "Ana";
+$aluno2 = "Bruno";
+$aluno3 = "Carlos";
+Com array (forma correta):
+$alunos = ["Ana", "Bruno", "Carlos"];
+* ✅ Código mais organizado
+
+* ✅ Menos repetição
+* ✅ Base de sistemas profissionais
+📌 4. ARRAY INDEXADO (VETOR)
+O array indexado usa números como índice, começando sempre em 0.
+<?php
+$cores = ["Azul", "Verde", "Vermelho"];
+
+echo $cores[0]; // Azul
+echo $cores[1]; // Verde
+?>
+Explicação:
+* $cores[0] → primeiro valor
+* $cores[1] → segundo valor
+📌 O computador sempre começa a contar do zero.
+📌 5. ARRAY ASSOCIATIVO (CHAVE → VALOR)
+O array associativo funciona como um cadastro.
+<?php
+$cliente = [
+"nome" => "Ana",
+"email" => "ana@email.com",
+"saldo" => 150.00
+];
+
+echo $cliente["nome"];
+?>
+Explicação:
+
+* "nome" → chave
+* "Ana" → valor
+* A chave funciona como o nome de um campo no banco de dados
+✅ Muito parecido com uma tabela de sistema real.
+📌 6. ARRAY MULTIDIMENSIONAL
+(Lista de registros)
+Um array multidimensional é um array dentro de outro array.
+<?php
+$clientes = [
+[
+"id" => 1,
+"nome" => "Ana",
+"saldo" => 150
+],
+[
+"id" => 2,
+"nome" => "Bruno",
+"saldo" => -80
+]
+];
+?>
+
+Interpretação:
+* Cada bloco representa um cliente
+* Funciona como linhas de uma tabela
+✅ Aqui começamos a simular um banco de dados.
+
+📌 7. SIMULAÇÃO INICIAL DE UM SISTEMA FINANCEIRO
+<?php
+$contas = [
+[
+"descricao" => "Mensalidade",
+"valor" => 200,
+"tipo" => "Receber"
+],
+[
+"descricao" => "Conta de Luz",
+"valor" => 120,
+"tipo" => "Pagar"
+]
+];
+?>
+📌 Esse array será a base do sistema financeiro que será desenvolvido ao longo do
+curso.
+✍️ EXERCÍCIOS – AULA 01
+✅ Exercício 1
+Crie um array com 5 nomes de alunos e mostre:
+* O primeiro nome
+* O último nome
+✅ Exercício 2
+Crie um array associativo representando um produto, contendo:
+* nome
+* preço
+* quantidade
+
+Mostre o nome e o preço do produto.
+✅ Exercício 3
+Crie um array multidimensional com 3 clientes, contendo:
+* id
+* nome
+* saldo
+🚀 DESAFIOS PRÁTICOS
+🔥 Desafio 1
+Crie um array chamado $usuarios com:
+* usuario
+* senha
+* perfil
+(Este array será usado no login futuramente.)
+🔥 Desafio 2
+Crie um array chamado $contas contendo:
+* descrição
+* valor
+* tipo (Pagar ou Receber)
+
+📌 FECHAMENTO DA AULA
+Nesta aula, o aluno aprendeu:
+● O que é PHP
+● Como usar variáveis
+● Como criar e utilizar arrays
+● Como os arrays são a base de sistemas reais
+
+📘 AULA 02
+Percorrendo Listas com foreach
+Simulação de SELECT e listagem de dados
+🎯 OBJETIVOS DE APRENDIZAGEM
+Ao final desta aula, o aluno será capaz de:
+● Entender o que são estruturas de repetição
+● Utilizar o comando foreach
+● Percorrer arrays simples e multidimensionais
+● Listar dados dinamicamente
+● Simular o funcionamento de um SELECT de banco de dados
+● Exibir informações de um sistema financeiro
+
+📌 1. REVISÃO DA AULA 01
+Na aula anterior, aprendemos:
+* O que é PHP
+* Como criar variáveis
+* O que são arrays
+* Tipos de arrays:
+o Indexado
+o Associativo
+o Multidimensional
+
+📌 Nesta aula, vamos percorrer esses arrays para mostrar os dados na tela.
+📌 2. O QUE SÃO ESTRUTURAS DE REPETIÇÃO?
+Estruturas de repetição servem para executar o mesmo código várias vezes, de forma
+automática.
+Exemplo da vida real:
+“Para cada aluno da lista, mostrar o nome”
+No PHP, uma das estruturas mais usadas para trabalhar com listas é o foreach.
+
+📌 3. O COMANDO foreach
+O foreach percorre todos os valores de um array, um por um.
+Estrutura básica:
+foreach ($array as $valor) {
+// código
+}
+● $array → lista de dados
+● $valor → recebe cada item da lista
+📌 4. foreach COM ARRAY INDEXADO
+Exemplo:
+<?php
+$alunos = ["Ana", "Bruno", "Carlos"];
+
+foreach ($alunos as $aluno) {
+echo $aluno . "<br>";
+}
+?>
+Explicação linha a linha:
+● O foreach pega cada nome do array $alunos
+● A variável $aluno recebe um nome por vez
+● O echo mostra o nome na tela
+✅ Resultado:
+Ana
+Bruno
+Carlos
+📌 5. foreach COM ARRAY ASSOCIATIVO
+Exemplo:
+<?php
+
+$cliente = [
+"nome" => "Ana",
+"email" => "ana@email.com",
+"saldo" => 150
+];
+
+foreach ($cliente as $campo => $valor) {
+echo $campo . ": " . $valor . "<br>";
+}
+?>
+Explicação:
+● $campo → nome da chave (nome, email, saldo)
+● $valor → valor correspondente
+✅ Muito parecido com a leitura de campos de um banco de dados.
+📌 6. foreach COM ARRAY MULTIDIMENSIONAL
+(Simulação de Tabela)
+Exemplo:
+<?php
+$clientes = [
+[
+"id" => 1,
+"nome" => "Ana",
+"saldo" => 150
+],
+[
+"id" => 2,
+"nome" => "Bruno",
+
+"saldo" => -80
+]
+];
+
+foreach ($clientes as $cliente) {
+echo "Nome: " . $cliente["nome"] . "<br>";
+echo "Saldo: " . $cliente["saldo"] . "<br>";
+echo "<hr>";
+}
+?>
+📌 Cada repetição representa uma linha da tabela.
+✅ Isso simula:
+SELECT * FROM clientes;
+📌 7. SIMULAÇÃO DE UM SISTEMA FINANCEIRO
+(Listagem de contas)
+<?php
+$contas = [
+[
+"descricao" => "Mensalidade",
+"valor" => 200,
+"tipo" => "Receber"
+],
+[
+"descricao" => "Conta de Luz",
+"valor" => 120,
+"tipo" => "Pagar"
+
+]
+];
+
+foreach ($contas as $conta) {
+echo "Descrição: " . $conta["descricao"] . "<br>";
+echo "Valor: R$ " . $conta["valor"] . "<br>";
+echo "Tipo: " . $conta["tipo"] . "<br>";
+echo "<hr>";
+}
+?>
+✅ Aqui o aluno já começa a enxergar um sistema real.
+✍️ EXERCÍCIOS – AULA 02
+✅ Exercício 1
+Crie um array com 5 nomes de cidades e use foreach para mostrar todas.
+✅ Exercício 2
+Crie um array associativo com:
+● nome
+● idade
+● curso
+Use foreach para mostrar os dados.
+✅ Exercício 3
+Crie um array multidimensional com 3 produtos, contendo:
+● nome
+● preço
+Liste todos usando foreach.
+🚀 DESAFIOS PRÁTICOS
+🔥 Desafio 1
+Crie um array $usuarios com pelo menos 3 usuários e liste:
+
+● usuário
+● perfil
+🔥 Desafio 2
+Crie um array $contas com:
+● descrição
+● valor
+● tipo
+Liste apenas as contas do tipo Receber.
+(Dica: use if dentro do foreach.)
+📌 FECHAMENTO DA AULA
+Nesta aula, o aluno aprendeu:
+● O que são estruturas de repetição
+● Como usar o foreach
+● Como listar dados dinamicamente
+● Como simular um SELECT de banco de dados
+
+Segue agora a AULA 03, mantendo exatamente o mesmo padrão de APOSTILA
+OFICIAL, pronta para copiar e colar no Word, com foco em organização de projetos
+PHP, algo essencial para sistemas reais.
+📘 AULA 03
+Estrutura de Pastas e Organização de Projetos em PHP
+Construindo sistemas organizados e profissionais
+📌 1. POR QUE ORGANIZAR UM PROJETO?
+Em projetos pequenos, até é possível colocar tudo em um único arquivo.
+Porém, em sistemas reais, isso causa:
+❌ Código confuso
+❌ Dificuldade de manutenção
+❌ Erros frequentes
+❌ Dificuldade para trabalhar em equipe
+✅ Por isso, usamos estrutura de pastas, assim como empresas de software.
+📌 2. CONCEITO DE ESTRUTURA DE PASTAS
+
+Uma estrutura de pastas define onde cada tipo de arquivo deve ficar.
+📌 Cada pasta tem uma função específica:
+● Dados
+● Configurações
+● Páginas
+● Partes reutilizáveis
+● Arquivos visuais
+Isso deixa o projeto: ✅ Organizado
+✅ Profissional
+✅ Fácil de entender
+📌 3. VISÃO GERAL DA ESTRUTURA DO PROJETO
+sistema-financeiro/
+├── index.php
+├── login.php
+├── logout.php
+│
+├── assets/
+│ ├── css/
+│ ├── js/
+│ └── img/
+│
+├── config/
+│ └── config.php
+│
+├── includes/
+│ ├── header.php
+│ ├── menu.php
+│ ├── footer.php
+│ └── auth.php
+
+│
+├── data/
+│ └── dados.php
+│
+└── pages/
+├── dashboard.php
+└── contas/
+├── listar.php
+├── cadastrar.php
+├── editar.php
+└── excluir.php
+📌 Essa estrutura será usada durante todo o projeto.
+📌 4. EXPLICAÇÃO DAS PASTAS (UMA A UMA)
+📁 Raiz do Projeto
+index.php
+Arquivo inicial do sistema.
+<?php
+header("Location: login.php");
+?>
+✅ Redireciona o usuário para o login.
+📁 assets/ – Arquivos Visuais
+Guarda tudo que é visual, sem lógica PHP.
+css/
+Arquivos de estilo (cores, fontes, layout).
+js/
+Scripts JavaScript (validações, alertas).
+
+img/
+Imagens do sistema (logo, ícones).
+📁 config/ – Configurações
+config.php
+Arquivo central de configuração.
+<?php
+session_start();
+?>
+✅ Inicia a sessão
+✅ No futuro, terá conexão com banco
+📁 includes/ – Arquivos Reutilizáveis
+Evita repetição de código.
+header.php
+Cabeçalho do HTML + Bootstrap.
+menu.php
+Menu do sistema (dinâmico por perfil).
+footer.php
+Rodapé e fechamento do HTML.
+auth.php
+Proteção de páginas.
+<?php
+if (!isset($_SESSION["usuario"])) {
+header("Location: ../login.php");
+}
+?>
+📁 data/ – Simulação de Banco de Dados
+dados.php
+
+Contém arrays simulando tabelas.
+<?php
+$usuarios = [];
+$contas = [];
+?>
+✅ Muito usado em aulas iniciais
+✅ Facilita a transição para MySQL
+📁 pages/ – Páginas Internas
+dashboard.php
+Tela inicial após login.
+📁 contas/
+Arquivos do CRUD de contas.
+📌 5. SEPARAÇÃO DE RESPONSABILIDADES
+
+Tipo de Arquivo Responsabilidad
+
+e
+
+data/ Dados
+
+pages/ Telas
+
+includes/ Partes reutilizáveis
+
+assets/ Visual
+
+config/ Configuração
+
+✅ Isso se aproxima do padrão MVC.
+✍️ EXERCÍCIOS – AULA 03
+✅ Exercício 1
+Explique com suas palavras por que organizar pastas é importante em um sistema.
+
+✅ Exercício 2
+Crie uma estrutura de pastas para um sistema de cadastro de alunos.
+✅ Exercício 3
+Explique a função das pastas:
+● data
+● includes
+● pages
+🚀 DESAFIOS PRÁTICOS
+🔥 Desafio 1
+Crie a estrutura de pastas do projeto no computador e adicione arquivos vazios com os
+nomes corretos.
+🔥 Desafio 2
+Crie um arquivo header.php e coloque nele:
+● DOCTYPE
+● <html>
+● <head>
+● Bootstrap via CDN
+📌 FECHAMENTO DA AULA
+Nesta aula, o aluno aprendeu:
+● A importância da organização
+● Como estruturar um projeto PHP
+● A função de cada pasta
+● Base profissional de sistemas web
+
+Segue agora a AULA 04, mantendo rigorosamente o padrão de APOSTILA OFICIAL, pronta
+para copiar e colar no Word, dando um salto importante no projeto: sessões, login e
+controle de acesso, exatamente como sistemas reais.
+
+📘 AULA 04
+
+Sessões, Login e Controle de Acesso em PHP
+
+Autenticação de usuários em sistemas web
+
+📌 1. O QUE É LOGIN EM UM SISTEMA?
+Login é o processo de identificar um usuário dentro do sistema.
+Normalmente envolve:
+● Usuário
+● Senha
+📌 Quando o login é válido, o sistema: ✅ Permite acesso
+✅ Guarda informações do usuário
+✅ Controla o que ele pode ou não fazer
+
+📌 2. O QUE É UMA SESSÃO?
+Uma sessão é uma forma do servidor lembrar quem é o usuário enquanto ele navega pelo
+sistema.
+👉 Sem sessão:
+● Cada página “esquece” o usuário
+👉 Com sessão:
+● O sistema sabe quem está logado
+● O acesso é controlado
+
+📌 3. INICIANDO UMA SESSÃO EM PHP
+Para usar sessões em PHP, é obrigatório iniciar a sessão.
+<?php
+session_start();
+?>
+📌 Esse comando deve ficar no início do arquivo, antes de qualquer HTML.
+✅ Normalmente fica no arquivo config.php.
+
+📌 4. SIMULANDO USUÁRIOS DO
+SISTEMA
+
+Vamos usar um array para simular a tabela de usuários.
+📁 data/dados.php
+<?php
+$usuarios = [
+[
+"usuario" => "cliente",
+"senha" => "123",
+"perfil" => "cliente"
+],
+[
+"usuario" => "empresa",
+"senha" => "123",
+"perfil" => "empresa"
+],
+[
+"usuario" => "admin",
+"senha" => "123",
+"perfil" => "proprietario"
+]
+];
+?>
+📌 Cada item representa um usuário do sistema.
+
+📌 5. CRIANDO A TELA DE LOGIN
+📄 login.php
+<?php
+include "config/config.php";
+include "data/dados.php";
+$erro = "";
+
+if ($_POST) {
+foreach ($usuarios as $user) {
+if (
+$_POST["usuario"] == $user["usuario"] &&
+$_POST["senha"] == $user["senha"]
+) {
+$_SESSION["usuario"] = $user["usuario"];
+$_SESSION["perfil"] = $user["perfil"];
+header("Location: pages/dashboard.php");
+exit;
+}
+}
+$erro = "Usuário ou senha inválidos!";
+}
+?>
+Explicação:
+● Verifica se o formulário foi enviado
+● Percorre os usuários com foreach
+● Compara usuário e senha
+● Cria a sessão
+● Redireciona para o sistema
+📌 6. USANDO A SESSÃO
+Após o login, os dados ficam disponíveis em qualquer página.
+<?php
+echo $_SESSION["usuario"];
+echo $_SESSION["perfil"];
+?>
+✅ O sistema agora “sabe” quem está logado.
+
+📌 7. PROTEGENDO PÁGINAS DO
+SISTEMA
+
+📄 includes/auth.php
+<?php
+if (!isset($_SESSION["usuario"])) {
+header("Location: ../login.php");
+}
+?>
+📌 Esse arquivo deve ser incluído em todas as páginas internas.
+✅ Impede acesso direto sem login
+✅ Fundamental para segurança
+
+📌 8. CRIANDO O LOGOUT
+📄 logout.php
+<?php
+session_start();
+session_destroy();
+header("Location: login.php");
+?>
+✅ Encerra a sessão
+✅ Desloga o usuário
+
+✍️ EXERCÍCIOS – AULA 04
+✅ Exercício 1
+Explique com suas palavras o que é uma sessão em PHP.
+✅ Exercício 2
+O que acontece se acessarmos uma página protegida sem estar logado?
+✅ Exercício 3
+Crie um array com 2 usuários, contendo:
+● usuário
+
+● senha
+● perfil
+🚀 DESAFIOS PRÁTICOS
+🔥 Desafio 1
+Altere o sistema para mostrar no dashboard:
+“Bem-vindo, NOME DO USUÁRIO”
+🔥 Desafio 2
+Crie uma regra simples:
+● Se o perfil for cliente, mostrar mensagem “Área do Cliente”
+● Se for empresa, mostrar “Área da Empresa”
+📌 FECHAMENTO DA AULA
+Nesta aula, o aluno aprendeu:
+● O que é login
+● O que é sessão
+● Como criar autenticação em PHP
+● Como proteger páginas do sistema
+
+📘 AULA 05
+
+Perfis de Usuário e Menu Dinâmico em PHP
+
+Controle de acesso visual em sistemas web
+
+📌 1. O QUE SÃO PERFIS DE USUÁRIO?
+Em sistemas reais, nem todos os usuários podem fazer tudo.
+
+📌 Por isso, usamos perfis de usuário, como por exemplo:
+● Cliente
+● Empresa
+● Administrador (Proprietário)
+Cada perfil define: ✅ O que o usuário pode acessar
+✅ Quais menus ele pode ver
+✅ Quais ações pode executar
+
+📌 2. PERFIS DO NOSSO SISTEMA
+No Sistema Financeiro, teremos três perfis:
+Perfil Descrição
+cliente Visualiza suas contas
+empresa Cadastra e gerencia contas
+proprietario Acesso total ao sistema
+📌 Esses perfis já foram definidos no array de usuários.
+
+📌 3. CONTROLE DE ACESSO LÓGICO x
+VISUAL
+
+✅ Controle lógico
+● Impede acesso direto a páginas
+● Feito com auth.php
+✅ Controle visual
+● Mostra ou esconde menus
+● Evita confusão do usuário
+● Deixa o sistema mais organizado
+📌 Nesta aula, o foco será o controle visual.
+
+📌 4. RECUPERANDO O PERFIL DO
+USUÁRIO
+
+O perfil está armazenado na sessão.
+<?php
+$perfil = $_SESSION["perfil"];
+?>
+✅ Essa variável será usada para controlar o menu.
+
+📌 5. CRIANDO O MENU DO SISTEMA
+📄 includes/menu.php
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+<div class="container">
+#Sistema Financeiro</a>
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+dashboard.phpDashboard</a>
+</li>
+<?php if ($perfil == "cliente") { ?>
+<li class="nav-item">
+contas/listar.phpMinhas Contas</a>
+</li>
+<?php } ?>
+<?php if ($perfil == "empresa") { ?>
+<li class="nav-item">
+contas/listar.phpContas da Empresa</a>
+</li>
+<li class="nav-item">
+contas/cadastrar.phpCadastrar Conta</a>
+</li>
+<?php } ?>
+
+<?php if ($perfil == "proprietario") { ?>
+<li class="nav-item">
+contas/listar.phpTodas as Contas</a>
+</li>
+<li class="nav-item">
+usuarios/listar.phpUsuários</a>
+</li>
+<?php } ?>
+<li class="nav-item">
+../logout.phpSair</a>
+</li>
+</ul>
+</div>
+</nav>
+
+📌 6. EXPLICAÇÃO DO CÓDIGO (PASSO
+A PASSO)
+● O menu usa Bootstrap
+● O PHP verifica o valor de $perfil
+● Cada if decide o que será exibido
+● O usuário vê apenas o que faz sentido para ele
+✅ O sistema fica mais seguro
+✅ Mais organizado
+✅ Mais profissional
+
+📌 7. TESTANDO OS PERFIS
+Faça login com usuários diferentes:
+Usuário Perfil
+cliente cliente
+empresa empresa
+
+admin proprietario
+📌 Observe como o menu muda automaticamente.
+
+✍️ EXERCÍCIOS – AULA 05
+✅ Exercício 1
+Explique com suas palavras o que é perfil de usuário.
+✅ Exercício 2
+Qual a diferença entre controle lógico e controle visual?
+✅ Exercício 3
+Crie um menu simples que mostre:
+● “Área do Cliente” apenas para clientes
+● “Área Administrativa” apenas para proprietários
+🚀 DESAFIOS PRÁTICOS
+🔥 Desafio 1
+Altere o menu para mostrar o nome do usuário logado.
+Exemplo:
+Usuário: cliente
+🔥 Desafio 2
+Crie um novo perfil chamado financeiro e:
+● Mostre apenas a opção “Relatórios”
+📌 FECHAMENTO DA AULA
+Nesta aula, o aluno aprendeu:
+
+● O que são perfis de usuário
+● Como controlar menus por perfil
+● A diferença entre controle lógico e visual
+● Como criar menu dinâmico em PHP
+
+📘 AULA 06
+
+Introdução ao Bootstrap e Layout Responsivo
+Deixando o sistema bonito, organizado e profissional
+⏱ Carga horária: 2 aulas de 50 minutos (100 minutos)
+🎯 OBJETIVOS DE APRENDIZAGEM
+Ao final desta aula, o aluno será capaz de:
+● Entender o que é Bootstrap
+● Compreender a diferença entre lógica (PHP) e visual (Bootstrap)
+● Utilizar Bootstrap via CDN
+● Criar layouts organizados com container, row e col
+● Estilizar formulários, botões e tabelas
+● Aplicar Bootstrap no Sistema Financeiro
+🕒 PLANEJAMENTO DA AULA
+
+⏰ Aula 06 – Parte 1 (50 minutos)
+1. Revisão da Aula 05 – 10 min
+2. O que é Bootstrap – 10 min
+3. Front-end x Back-end – 10 min
+4. Inserindo Bootstrap no projeto – 20 min
+⏰ Aula 06 – Parte 2 (50 minutos)
+1. Sistema de grid (container, row, col) – 15 min
+2. Botões e formulários com Bootstrap – 15 min
+3. Tabelas e cards – 10 min
+
+4. Exercícios e fixação – 10 min
+📌 1. O QUE É BOOTSTRAP?
+O Bootstrap é um framework front-end, ou seja, uma ferramenta que ajuda a criar a parte
+visual do sistema.
+👉 Ele é usado para:
+● Deixar páginas bonitas
+● Organizar o layout
+● Criar sites responsivos (computador e celular)
+📌 O Bootstrap não substitui o PHP.
+Eles trabalham juntos:
+Tecnologia Responsabilidade
+PHP Lógica e dados
+Bootstrap Aparência e layout
+
+📌 2. FRONT-END x BACK-END
+✅ Back-end
+● PHP
+● Processa dados
+● Login, regras, cálculos
+✅ Front-end
+● HTML
+● CSS
+● Bootstrap
+● Aparência do sistema
+📌 Nesta aula, o foco é o front-end com Bootstrap.
+
+📌 3. COMO USAR BOOTSTRAP (CDN)
+
+A forma mais simples é usando CDN.
+📄 header.php
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Sistema Financeiro</title>
+<!-- Bootstrap CSS -->
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+</head>
+<body>
+📌 Com isso, todo o sistema já pode usar Bootstrap.
+
+📌 4. CONTAINER – CENTRALIZANDO O
+CONTEÚDO
+
+O Bootstrap usa containers para organizar o conteúdo.
+<div class="container">
+<h1>Meu Sistema</h1>
+</div>
+✅ Centraliza
+✅ Define largura máxima
+✅ Deixa o layout organizado
+
+📌 5. SISTEMA DE GRID (ROW E COL)
+O Bootstrap trabalha com linhas (row) e colunas (col).
+<div class="container">
+<div class="row">
+<div class="col-md-6">Coluna 1</div>
+<div class="col-md-6">Coluna 2</div>
+</div>
+</div>
+
+📌 col-md-6 significa:
+● 6 colunas de um total de 12
+● Layout responsivo
+✅ Funciona no computador e no celular.
+
+📌 6. BOTÕES COM BOOTSTRAP
+<button class="btn btn-primary">Salvar</button>
+<button class="btn btn-success">Cadastrar</button>
+<button class="btn btn-danger">Excluir</button>
+📌 Sem escrever CSS, o botão já fica:
+● Colorido
+● Padronizado
+● Profissional
+
+📌 7. FORMULÁRIOS COM BOOTSTRAP
+<form>
+<div class="mb-3">
+<label class="form-label">Descrição</label>
+<input type="text" class="form-control">
+</div>
+<div class="mb-3">
+<label class="form-label">Valor</label>
+<input type="number" class="form-control">
+</div>
+<button class="btn btn-success">Cadastrar</button>
+</form>
+✅ Layout limpo
+✅ Fácil de usar
+✅ Ideal para sistemas
+
+📌 8. TABELAS COM BOOTSTRAP
+<table class="table table-bordered table-striped">
+
+<thead class="table-dark">
+<tr>
+<th>Descrição</th>
+<th>Valor</th>
+<th>Tipo</th>
+</tr>
+</thead>
+</table>
+``
+📌 Muito usado em:
+● Listagem de contas
+● Listagem de usuários
+📌 9. CARDS (USADOS NO DASHBOARD)
+<div class="card text-bg-success">
+<div class="card-body">
+<h5 class="card-title">Contas a Receber</h5>
+<p class="card-text">R$ 1.200,00</p>
+</div>
+</div>
+✅ Visual moderno
+✅ Muito usado em dashboards
+
+✍️ EXERCÍCIOS – AULA 06
+✅ Exercício 1
+Explique com suas palavras o que é Bootstrap.
+✅ Exercício 2
+Crie um botão usando Bootstrap com a cor:
+● Verde
+● Vermelha
+✅ Exercício 3
+
+Crie um formulário com:
+● Nome
+● Email
+● Botão “Enviar”
+usando Bootstrap.
+🚀 DESAFIOS PRÁTICOS
+🔥 Desafio 1
+Crie uma tabela Bootstrap para listar:
+● Nome
+● Valor
+● Tipo
+🔥 Desafio 2
+Crie um card Bootstrap mostrando:
+● Saldo atual do sistema
+📌 FECHAMENTO DA AULA
+Nesta aula, o aluno aprendeu:
+● O que é Bootstrap
+● Como usar Bootstrap via CDN
+● Criar layouts com grid
+● Estilizar formulários, botões, tabelas e cards
